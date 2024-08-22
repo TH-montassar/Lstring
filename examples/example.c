@@ -6,6 +6,13 @@
 int main(void)
 {
     lstr_t *s1 = str_init("Hello Lstring");
-    printf("It's: %s \n", s1->buffer);
-    printf("It's: %s \n", s1->buffer);
+    printf("test tr_inittLstrcat:\t It's: %s \n", s1->buffer);
+
+    const char *ch2 = " Lstring!";
+
+    // Concatenate ch2 to ch1
+    Lstrcat(s1->buffer, ch2);
+
+    // Print the result
+    printf("testLstrcat: \t %s\n", s1->buffer);
 }
