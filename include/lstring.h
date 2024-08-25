@@ -22,5 +22,6 @@ typedef struct lstr lstr_t;
 size_t lsize(const char *str);
 void lstr_cpy(char *str1, const char *str2, int offset, int length, int option);
 lstr_t *str_init(const char *str);
+lstr_t *Lstrcat(char *ch1, const char *ch2);
 
 #endif // LSTRING_H
