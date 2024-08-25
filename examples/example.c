@@ -8,11 +8,11 @@ int main(void)
     lstr_t *s1 = str_init("Hello Lstring");
     printf("test tr_inittLstrcat:\t It's: %s \n", s1->buffer);
 
-    const char *ch2 = " Lstring!";
-
+    lstr_t *ch2 = str_init(" montassar!");
     // Concatenate ch2 to ch1
-    Lstrcat(s1->buffer, ch2);
+    lstr_t *strconcat = Lstrcat(s1->buffer, ch2->buffer);
+    printf("final str : %s\n", strconcat->buffer);
 
     // Print the result
-    printf("testLstrcat: \t %s\n", s1->buffer);
+    // printf("testLstrcat: \t %s\n");
 }
