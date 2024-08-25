@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    lstr_t *s1 = str_init("Hello Lstring");
+    lstr_t *s1 = lstr_init("Hello Lstring");
     printf("It's: %s \n", s1->buffer);
     printf("It's: %s \n", s1->buffer);
 }
