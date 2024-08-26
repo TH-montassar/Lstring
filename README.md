@@ -14,4 +14,4 @@
 
 ## Introduction
 
-LStrings is a C library focused on powerful string manipulation and regular expression utilities. The name "LStrings" is inspired by the character "L" from the anime series Death Note.
+LString is a C library focused on powerful string manipulation and regular expression utilities. The name "LString" is inspired by the character "L" from the anime series Death Note.

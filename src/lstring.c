@@ -16,13 +16,13 @@ void lstr_cpy(char *str1, const char *str2, int offset, int length, int option)
     size_t i = lsize(str2);
     int j = offset;
     int k = 0;
-    if (option == 1)
+    if (option == LSTR_ALL)
     {
         j = 0;
         offset = 0;
         length = i;
     }
-    else if (option == 2)
+    else if (option == LSTR_ALL_FRPOM_OFFSET)
     {
         length = i - offset;
     }
@@ -36,7 +36,7 @@ void lstr_cpy(char *str1, const char *str2, int offset, int length, int option)
     str1[i + 1] = '\0';
 }
 
-lstr_t *str_init(const char *str)
+lstr_t *lstr_init(const char *str)
 {
     lstr_t *pstr = (lstr_t *)malloc(sizeof(lstr_t));
     if (!pstr)
@@ -46,6 +46,6 @@ lstr_t *str_init(const char *str)
     }
     pstr->size = lsize(str);
     pstr->buffer = (char *)malloc(pstr->size + 1);
-    lstr_cpy(pstr->buffer, str, 3, 4, 3);
+    lstr_cpy(pstr->buffer, str, 0, 0, 1);
     return pstr;
 }
