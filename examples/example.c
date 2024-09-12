@@ -10,7 +10,7 @@ int main(void)
 
     lstr_t *ch2 = str_init(" montassar!");
     // Concatenate ch2 to ch1
-    lstr_t *strconcat = Lstrcat(s1->buffer, ch2->buffer);
+    lstr_t *strconcat = Lstrcat(*s1, *ch2);
     printf("final str : %s\n", strconcat->buffer);
 
     // Print the result
