@@ -52,9 +52,8 @@ lstr_t *str_init(const char *str)
 
 // Function to concatenate ch2 string to ch1 string
 
-lstr_t *Lstrcat(char *ch1, const char *ch2)
+lstr_t *Lstrcat(const lstr_t ch1, const lstr_t ch2)
 {
-    // Find the end of the ch1 string
     lstr_t *chF = (lstr_t *)malloc(sizeof(lstr_t));
 
     if (!chF)
@@ -63,26 +62,24 @@ lstr_t *Lstrcat(char *ch1, const char *ch2)
         return NULL;
     }
 
-    size_t lnch1 = lsize(ch1);
-    size_t lnch2 = lsize(ch2);
-
-    chF->size = lnch1 + lnch2;
+    chF->size = ch1.size + ch2.size;
 
     chF->buffer = (char *)malloc(chF->size + 1);
     if (!chF->buffer)
     {
         printf("Memory allocation failed!\n");
+        free(chF);
         return NULL;
     }
 
-    for (size_t i = 0; i < lnch1; i++)
+    for (size_t i = 0; i < ch1.size; i++)
     {
-        chF->buffer[i] = ch1[i];
+        chF->buffer[i] = ch1.buffer[i];
     }
 
-    for (size_t i = 0; i < lnch2; i++)
+    for (size_t i = 0; i < ch2.size; i++)
     {
-        chF->buffer[lnch1 + i] = ch2[i];
+        chF->buffer[ch1.size + i] = ch2.buffer[i];
     }
 
     chF->buffer[chF->size] = '\0';
